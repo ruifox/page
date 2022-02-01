@@ -21,11 +21,85 @@
 </head>
 
 <body>
-	<?php 
-    require 'modulos/menu_mobile.php';
-    require 'modulos/main_menu.php';
-    require 'modulos/main_video.php';
-?>
+		<div id="menu_mobile" class="overlay">
+	  <a href="javascript:void(0)" class="closebtn" onclick="mm_fechar()">&times;</a>
+	  <div class="overlay-content">		
+		<a href="#about"  onclick="mm_fechar()">Who Me?</a>
+		<a href="#information"  onclick="mm_fechar()"> Information </a>
+		<a href="#contact"  onclick="mm_fechar()">Contacts</a>
+	  </div>
+	</div>
+	  <nav class="main_menu"> 
+	<div class="container-fluid logotipo">
+	
+			<a href="http://www.godifferent.pt/" class="nav-home">
+				<div class="logo_text" ><span class="logo_1">go</span><span class="logo_2">different</span><!-- <span class="label_dev">  |  Rui Pereira</span> --></div>
+				<div class="logo_img not_logo_img"><img src="img/logo_white.svg"></div>
+			</a>
+	</div>
+	<div class="nav nav-masthead">
+		
+		<a class="nav-link menu_bout" href="#about">WHO? Me?</a>	
+		<a class="nav-link menu_info" href="#information">INFORMATION</a>
+		<a class="nav-link menu_cont" href="#contact">CONTACT</a>
+		<!--<span class="menu" onclick="mm_abrir()"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></span>-->
+		
+	  </div>
+	  <div class="nav2">
+		
+		
+		<span class="menu2" onclick="mm_abrir()"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></span>
+		
+	  </div>
+	</nav>
+	
+
+	<script>document.documentElement.className = 'js';</script>
+	<section class="header_container">
+	 <video loop muted autoplay class="full_bg_video">  
+       <source src="upload/face_comp_2.mp4" type="video/mp4">
+    </video>
+        <div class="inicio">
+			<header>
+				
+				  <div class="main_content" id="svg-container">		
+					
+					<span class="quote qut1 " id="quot1">"Never Stop Learning"</span>
+					<span class="quote qut2 " id="quot2">"Don't be afraid to Fail"</span>
+				  
+				
+				  
+				  </div>
+				 </header>
+		</div> 
+                                                      
+    </section>
+	
+	
+	
+	<script>
+		 
+		// Create cross browser requestAnimationFrame method:
+		window.requestAnimationFrame = window.requestAnimationFrame
+		 || window.mozRequestAnimationFrame
+		 || window.webkitRequestAnimationFrame
+		 || window.msRequestAnimationFrame
+		 || function(f){setTimeout(f, 1000/60)}
+		 
+		var bubble1 = document.getElementById('quot1')
+		var bubble2 = document.getElementById('quot2')
+		 
+		function parallaxbubbles(){
+		 var scrolltop = window.pageYOffset // get number of pixels document has scrolled vertically 
+		 bubble1.style.top = -scrolltop * .2 + 'px' // move bubble1 at 20% of scroll rate
+		 bubble2.style.top = -scrolltop * .6 + 'px' // move bubble2 at 50% of scroll rate
+		}
+		 
+		window.addEventListener('scroll', function(){ // on page scroll
+		 requestAnimationFrame(parallaxbubbles) // call parallaxbubbles() on next available screen paint
+		}, false)
+		 
+		</script>
 	<div class="mouse-icon hidden-xs">
 		<div class="scroll"></div>
 	</div>
@@ -104,19 +178,8 @@
 		 crossorigin="anonymous"></script>
 		<script src="js/anime.min.js"></script>
 		<script src="js/scripts2.js"></script>
-		<script type="text/javascript" src="js/instafeed.min.js"></script>
-		<!-- <script type="text/javascript">
-			var feed = new Instafeed({
-				get: 'user',
-				userId: 176088561,
-				accessToken: '176088561.1677ed0.5cfce69ce72d43d388104d6ba8c24b33',
-				limit: 15,
-				resolution: 'standard_resolution',
-				template: '<a href="https://www.instagram.com/ruifox88/"target="_blank"><img src="{{image}}"style="margin: 1%;    padding: 5px;    max-width: 172px;    max-height: 172px;    background: #e6e6e6;"/></a>'
-			});
-			feed.run();
-			//176088561.1677ed0.5cfce69ce72d43d388104d6ba8c24b33
-		</script> -->
+	
+		
 
 
 </body>
